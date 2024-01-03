@@ -1,5 +1,8 @@
 <div align="center">
 <h1 align="center">STYLE TRANSFER IN OPTIMAL TRANSPORT</h1>
+
+<img src="readme_image\cover.jpg" alt="center">
+
   <h3 align="center">
     Project for OAA Course at International University - VNU
     <br />
@@ -31,7 +34,6 @@
 The project's goal is to introduce the optimal transport algorithm and its applications in style transfer.
 
 
-<img src="src/components/assets/whole_project.png" alt="center">
 
 <!-- METHODOLOGY -->
 
@@ -42,15 +44,16 @@ The project's goal is to introduce the optimal transport algorithm and its appli
 In general, we have two inputs: a style image IS and a content image IC. The goal is to minimize the objective function below, using two inputs and gradient descent variant RMSprop.
 
 
-<img src="src/components/assets/react_logo.jpg" alt="Objective function">
+<img src="readme_image\objective_function.jpg" alt="Objective function">
 
 ## 2. Style loss
 
+<img src="readme_image\remd.jpg" alt="REMD">
+
 ### a. Relaxed earth movers distance
 
-- []() Sorting selection
 
-  <img src="src/components/assets/sort_selection.png" alt="sorting selection">
+  <img src="readme_image\lr.jpg" alt="REMD">
 
 
 
@@ -58,26 +61,29 @@ In general, we have two inputs: a style image IS and a content image IC. The goa
 
 Although lr can be a good term to transfer the structure of the source image to the target image, the feature vectors can be ignore by the cosine distance of lr. This results in a visual artifacts in the output, the typical example is over or under saturation. Therefore, the moment matching loss is apply to solve this problem:
 
-<img src="src/components/assets/structure.png" alt="structure">
+<img src="readme_image\lm.jpg" alt="lm">
 
 
 ### c. Color matching loss
 
 Color matching loss is used to ensure the output and the style image to have a similar palette. lp is computed using Euclidean distance with REMD between pixel colors in X(t) and Is. 
 
+
 ## 3. Content loss and user control
 
 Equation to define content loss:
 
+<img src="readme_image\content_loss.jpg" alt="content loss">
 
 Where:
+
 •	D_x is the pairwise cosine distance matrix of all feature vectors.
+
 •	D_Ic is defined analogously for the content image.
 
+**We redefine the ground metric of the Relaxed EMD as follows:**
 
-- []()For the whole project:
-
-  <img src="src/components/assets/fullUML.png" alt="fullUML">
+  <img src="readme_image\user_control.jpg" alt="redefined">
 
 
 <!-- INSTALLATION -->
