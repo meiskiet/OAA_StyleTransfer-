@@ -1,8 +1,6 @@
 <div align="center">
 <h1 align="center">STYLE TRANSFER IN OPTIMAL TRANSPORT</h1>
 
-<img src="readme_image\cover.jpg" alt="center">
-
   <h3 align="center">
     Project for OAA Course at International University - VNU
     <br />
@@ -13,6 +11,8 @@
   </h3>
 
 [![Forks][forks-shield]][forks-url] [![Issues][issues-shield]][issues-url]
+
+<img src="readme_image\cover.jpg" alt="center">
 
 </div>
 
