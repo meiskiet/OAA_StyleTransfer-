@@ -1,59 +1,152 @@
-# 👨🏼‍🚀Style Transfer by Optimal Transport🚀
+<div align="center">
+<h1 align="center">STYLE TRANSFER IN OPTIMAL TRANSPORT</h1>
+  <h3 align="center">
+    Project for OAA Course at International University - VNU
+    <br />
+    <br />
+    <a href="https://github.com/meiskiet/OAA_StyleTransfer-/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/meiskiet/OAA_StyleTransfer-/issues">Request Feature</a>
+  </h3>
 
-<p align="center"> 
-   <img src ="assets/Logo.png"/>
-</p>
+[![Forks][forks-shield]][forks-url] [![Issues][issues-shield]][issues-url]
 
-## 📋 Table of content
-* [About](#About)
-* [Engines](#Engines)
-* [Architecture](#Architecture)
-* [Data Structure and Algorithm](#Data Structure and Algorithm)
+</div>
 
----
-## About
+<!-- About -->
 
-### 📌 General Information:
-- __Game name:__ **Space Aircraft**
+# ABOUT
 
-- __Category:__ **2D, Action, Shooting, Single player**
+## 1. The team behind it
 
--  __Lore:__
-      _As the Earth becomes hotter, drought and disease ravage the population,
-       Scientists look for a new planet - one that can support human life.
-       In 2099, they found it. You and your teammates are sent by the government
-       to explore this planet, which is protected by 3 guardians 🛸. The appearance 
-       of humans made them worried about the safety of the planet, so they created 
-       meteor storms to attack you. Your teammates have sacrificed and you are the
-       Earth's only hope right now. Don't let them down._
+| No. |       Full Name        | Student's ID |              Email               |                       Roles                       | Contribution |
+| :-: | :--------------------: | :----------: | :------------------------------: | :-----------------------------------------------: | :----------: |
+|  1  |  Duong Nguyen Gia Khanh  | ITDSIU20100  | ITDSIU20100@student.hcmiu.edu.vn |       CODE AND DEMONSTRATION       |     25%      |
+|  2  |    Nguyen Trung Kien     | ITDSIU20067  | ITDSIU20067@student.hcmiu.edu.vn |       SLIDES AND ALGORITHM        |     25%      |
+|  3  |    Nguyen Hai Ngoc     | ITDSIU21057  | ITDSIU21057@student.hcmiu.edu.vn |             REPORT AND ALGORITHM             |     25%      |
+|  4  | Hoang Tuan Kiet | ITDSIU21055  | ITDSIU21055@student.hcmiu.edu.vn | CODE AND DEMONSTRATION |     25%      |
 
-### 🎮 Rule:
-- The rule is simple, dodge the asteroids and shoot the guardian at the same time.
-The key is how you show your flexibility in this game.
+## 2. The project we are working on
 
-### 👨‍👦‍👦 Us:
-- Team members:
-  - Leader: Dương Nguyễn Gia Khánh - ITDSIU20100
-  
-| No  | Name                           | ID           | Main Contributes                                                                                     | Contacts                                                                                                                                |
-|-----|--------------------------------|--------------|------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
-| 1   | **Dương Nguyễn Gia Khánh** 👨‍💻 | ITDSIU20100  | Game Developer, Game artist, Debug & fixing code, Idea contributor Tasks distributor, Tasks Tracker. | [Github](https://github.com/GiaKhanhs) [Facebook](https://www.facebook.com/profile.php?id=100010473340237)|
-| 2   | **Nguyễn Sỹ Nguyên Ngọc** 🎅💻 | ITDSIU20091  | Game Developer, Idea contributor, Debug & fixing code, Quality Checker, Tasks distributor.           | [Github](https://github.com/nguyengoc16) [Facebook](https://www.facebook.com/nguyengoc61)|
-| 3   | **Đoàn Hữu Nguyên** 👨🏻‍💻    | ITITIU20260  | Github repository host, Game Developer, Debug & fixing code, Game Sounds & Music.                    | [Github](https://github.com/nguyensngoc108) [Facebook](https://www.facebook.com/NeyAndUgn)|
-| 4   | **Nguyễn Trung Kiên** 🧑🏻‍🎨   | ITDSIU20067  | Game designer, Game artist, Slide, Thoughts & Ideas Gatherer, Idea contributor.                      | [Github](https://github.com/K13Z) [Facebook](https://www.facebook.com/nguyenkienhadong)|
+The project's goal is to introduce the optimal transport algorithm and its applications in style transfer.
 
 
-## Engines:
-- Java Language
-- [Oracle JDK 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html).
-- [IntelliJ IDEA](https://www.jetbrains.com/idea/download/#section=windows) ![Intellij ver](https://img.shields.io/badge/version-2021.3.3-ff69b4).
-- [libGDX](https://libgdx.com/) ![libGDX ver](https://img.shields.io/badge/version-1.10.0.-yellowgreen).
+<img src="src/components/assets/whole_project.png" alt="center">
+
+<!-- METHODOLOGY -->
+
+# METHODOLOGY
+
+## 1. General method
+
+In general, we have two inputs: a style image IS and a content image IC. The goal is to minimize the objective function below, using two inputs and gradient descent variant RMSprop.
 
 
-## ⚙ Architecture
-<p align="center">
-<img src= ""/> 
-</p>
+<img src="src/components/assets/react_logo.jpg" alt="Objective function">
+
+## 2. Style loss
+
+### a. Relaxed earth movers distance
+
+- []() Sorting selection
+
+  <img src="src/components/assets/sort_selection.png" alt="sorting selection">
 
 
-## Data Structure and Algorithm
+
+### b. Moment matching loss
+
+Although lr can be a good term to transfer the structure of the source image to the target image, the feature vectors can be ignore by the cosine distance of lr. This results in a visual artifacts in the output, the typical example is over or under saturation. Therefore, the moment matching loss is apply to solve this problem:
+
+<img src="src/components/assets/structure.png" alt="structure">
+
+
+### c. Color matching loss
+
+Color matching loss is used to ensure the output and the style image to have a similar palette. lp is computed using Euclidean distance with REMD between pixel colors in X(t) and Is. 
+
+## 3. Content loss and user control
+
+Equation to define content loss:
+
+
+Where:
+•	D_x is the pairwise cosine distance matrix of all feature vectors.
+•	D_Ic is defined analogously for the content image.
+
+
+- []()For the whole project:
+
+  <img src="src/components/assets/fullUML.png" alt="fullUML">
+
+
+<!-- INSTALLATION -->
+
+# INSTALLATION
+
+### Steps
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/meiskiet/OAA_StyleTransfer-.git
+   ```
+2. Open in a programming IDE (supporting Python and its modules)
+3. Open the Terminal
+4. To install and run the project, users should run the code below in the
+   terminal:
+
+> npm install
+>
+> npm start
+
+<!-- RESULT -->
+
+# DEMO - RESULT
+
+
+
+<!-- CONTRIBUTING -->
+
+# CONTRIBUTING
+
+Contributions are what make the open source community such an amazing place to
+learn, inspire, and create. Any contributions you make are **greatly
+appreciated**.
+
+If you have a suggestion that would make this better, please fork the repo and
+create a pull request. You can also simply open an issue with the tag
+"enhancement". Don't forget to give the project a star! Thanks again!
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push develop feature/AmazingFeature`)
+5. Open a Pull Request
+
+<!-- CONTACT -->
+
+# CONTACT
+
+Hoang Tuan Kiet by **[Email HERE](ITDSIU21055@student.hcmiu.edu.vn)**
+
+Project Link:
+[https://github.com/meiskiet/OAA_StyleTransfer-](https://github.com/thanhhoann/DSA_wibudesu_sorting-simu)
+
+<!-- ACKNOWLEDGMENTS -->
+
+# ACKNOWLEDGEMENTS
+
+We want to express our sincerest thanks to our lecturer and the people who have
+helped us to achieve this project's goals:
+
+- []() Assoc. Prof. Vo Thi Luu Phuong
+
+- []() The README.md template from
+  **[othneildrew](https://github.com/othneildrew/Best-README-Template)**
+
+<!-- MARKDOWN LINKS & IMAGES -->
+
+[forks-shield]: https://img.shields.io/github/forks/meiskiet/OAA_StyleTransfer-?style=for-the-badge
+[forks-url]: https://github.com/meiskiet/OAA_StyleTransfer-/fork
+[issues-shield]: https://img.shields.io/github/issues/meiskiet/OAA_StyleTransfer-?style=for-the-badge
+[issues-url]: https://github.com/meiskiet/OAA_StyleTransfer-/issues
